@@ -23,7 +23,7 @@ def api_call(district_id,date):
 
     response_list = list()
     for vaccine_details in x.sessions:
-        if vaccine_details.min_age_limit >= 18 and (vaccine_details.available_capacity_dose1 >= 0 or vaccine_details.available_capacity_dose2 >= 0) :
+        if vaccine_details.min_age_limit >= 18 and (vaccine_details.available_capacity_dose1 > 0 or vaccine_details.available_capacity_dose2 > 0) :
             response_list.append(vaccine_details)
     
     if len(response_list) != 0:
@@ -68,7 +68,6 @@ def create_responses(date,response_list: list):
     recipients118 = sendEmailService.get_email_ids(118)
     recipients245 = sendEmailService.get_email_ids(245)
     recipients218 = sendEmailService.get_email_ids(218)
-    print(recipients118)
     sendEmailService.send_multiple_email(recipients145, "Dose 1 Available for 45+", body145)
     sendEmailService.send_multiple_email(recipients118, "Dose 1 Available for 18+", body118)
     sendEmailService.send_multiple_email(recipients245, "Dose 2 Available for 45+", body245)
