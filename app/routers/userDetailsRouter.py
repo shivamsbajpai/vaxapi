@@ -17,5 +17,5 @@ router = APIRouter(
 
 
 @router.post('/', status_code=status.HTTP_201_CREATED)
-def user_create_rent_details(request: UserDetailsRequest, db: Session = Depends(get_db)):
+def create_user_details(request: UserDetailsRequest, db: Session = Depends(get_db)):
     return userDetailsService.create_user_details(request, db)
