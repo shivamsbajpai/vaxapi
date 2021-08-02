@@ -75,7 +75,7 @@ def create_responses(date,response_list: list):
 
 
 def create_response_string(date,response):
-    response_string = f"Date: {date}\nDistrict:{response.district}\nfee type: {response.fee_type}\nmin age limit: {response.min_age_limit}\nname: {response.name}\naddress: {response.address}\nblock name: {response.block_name}\navailable_capacity_dose1: {response.available_capacity_dose1}\navailable_capacity_dose2: {response.available_capacity_dose2}"
+    response_string = f"Date: {date}\nDistrict:{response.district_name}\nfee type: {response.fee_type}\nmin age limit: {response.min_age_limit}\nname: {response.name}\naddress: {response.address}\nblock name: {response.block_name}\navailable_capacity_dose1: {response.available_capacity_dose1}\navailable_capacity_dose2: {response.available_capacity_dose2}"
     return response_string
 
 
